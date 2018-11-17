@@ -1,0 +1,10 @@
+*.pdf
+*.gz
+*.aux
+*.out
+*.npz
+*.log
+*.fls
+*latex*
+__pycache__*
+data/

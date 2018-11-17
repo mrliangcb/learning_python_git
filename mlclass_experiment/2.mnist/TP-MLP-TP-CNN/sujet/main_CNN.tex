@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage[colorlinks]{hyperref}
+
+%\catcode`\_=\active
+%\def_#1_{\emph{#1}}
+\catcode``=\active
+\def`#1`{{\tt#1}}
+
+\title{Machine Learning for Computer Vision \\ Convolutional NN}
+\author{Harold Mouchère}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Context}
+
+For this exercise we will use the math symbol recognition from the CROHME international competition or the MNIST digit dataset.
+We will use CNN for several task:
+\begin{itemize}
+\item image classification
+\item image encoding and generation (auto-encoding)
+\item unsupervised feature extraction
+\end{itemize}
+
+For these tasks, you will need functions developed in the previous practical: early stoping, cross-validation, meta-parameter training\ldots
+
+%The project sources can be dowloaded from \url{https://gitlab.univ-nantes.fr/Master-Projects/TP-MLP/repository/master/archive.zip} \footnote{or git cloned from \url{https://gitlab.univ-nantes.fr/Master-Projects/TP-MLP.git} }
+
+
+
+\section{Image classification}
+The classification task will be the same as in the previous practical (isolated symbol classification) but instead of fully connected layers, you will use convolutional layers (conv). Three meta-parameters can be changed in conv layers:
+\begin{itemize}
+\item size of the kernel: you will test $3 \times 3$ and $5 \times 5$ 
+\item number of filters: $2^n$ with $n = 3..7$ (from 8 to 128)
+\item number of layers: 1 to 3 should be enough (put a $2x2$ max pooling layer between each layer)
+\end{itemize}
+
+Furthermore, you can also change some parameters in the hidden fully-connected layers, but only 2 will be considered: no hidden layer and one layer with 1.5 times more hidden cells than the number of class.
+
+So normally $2 \times 5 \times 3 \times 2 = 60 $ experiments should be done, with each time 5 cross validations. 
+Depending on the processing time, do as many experiments as you can\footnote{Of course, start with the simplest networks, do at least 10 experiments, and do not wait for the end of this exercise to start the next one\ldots}.
+
+For each of the 60 configurations, give the number of weights and for those with available results give the loss and recognition rates on the training, validation and test datasets. Choose the best configuration and explain why.
+
+\section{Auto-encoding}
+
+An auto-encoder is a network which is fed an image and generates as output the same image. If the input image contains noise, we call it a de-noiser network. Generally these networks have one or several conv layers to "encode" the input image into a low dimension matrix (or vector) and then use this compressed representation to decode the image with symmetrically as many transposed convolution layers as conv layers. The cost function is usually the $L_2$ norm between the input image and the output image (the ground truth is the input image itself).
+
+Using conv layer and transposed layers, build an autoencoder network. Try several configurations to see their impact on re-construction. Present and comment your results. Give some examples of image reconstruction.
+
+\section{Unsupervised feature extraction}
+Use the best auto-encoder trained in the previous exercise to build a symbol classifier: remove the transposed conv layers and add the decision layer. You will get an architecture closed to the first exercise, but the conv layers are already trained and only the decision layers have to be trained.
+
+Study the impact of the number of training samples used during training on the system performance, with or without this pre-trained step. What are your conclusions?
+
+\section{Bonus}
+
+Let's try a funny test on digits images. We will train a system which generates images of number using an image of a number of the other class. From a '1' image, the network will generate a '2', from a '2' it will generate a '3' ... and from a '9' it will give a '0'. The difficulty is to decide what to choose as a target image: from a '1', which '2' should it generate? Two solutions are proposed:
+\begin{itemize}
+\item use any sample from the next class, the loss will just be the $L_2$ norm between the output and target images
+\item use any digit classifier (you know how to train one) to recognize the output digit, if the recognized class is not the next class, the network should be penalised. The loss function can be the classification loss of the second classifier.
+\end{itemize}
+Do as you want !
+
+\end{document}
