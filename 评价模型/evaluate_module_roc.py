@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from sklearn import metrics
 from sklearn.metrics import roc_auc_score
 #预测正例和负例的效果
-
 label=	[1,0,1,0,1,0,1,0,1,1]#10个ground_true ,1为有用positive，0为垃圾,
 pre=	[1,0,1,0,1,0,0,0,0,0]#预测
 positive_proba=	[0.9,0.9,0.9,0.2,0.9,0.2,0.9,0.2,0.9,0.9]
