@@ -19,3 +19,5 @@ for epoch in range(num_epochs):
 		label = label.cuda(0)#把数据放在gpu上
 		#如果要把gpu数据换成cpu的(才能用numpy)
 		label.cpu().data.numpy()
+
+# 运行的时候 CUDA_VISIBLE_DEVICES=1 python main.py
