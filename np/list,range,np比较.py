@@ -16,7 +16,14 @@ a=[[一行],[二行],['1','2']]#,为分隔符
 
 
 
-##二、list
+##二、字典
+student = {'小萌': '1001', '小智': '1002', '小强': '1003', '小明': '1004'}
+#根据value返求key
+new_dict = {v : k for k, v in dict.items()}#将原字典翻转
+new_dict ['1001']
+
+
+##三、list
 
 #如果list要看shape，就先转成np：np.array(*)然后再看shape
 b=[1,2,3]
@@ -60,7 +67,7 @@ print('删除a[0]:\n',a)
 
 
 
-#三、numpy
+#四、numpy
 
 np.linspace(0, 10, 1000)
 #0到10之间分成1000份
