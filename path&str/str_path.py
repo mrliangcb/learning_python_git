@@ -29,7 +29,7 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 str=r'abcdef'
 str=str.replace('abc','hahaha')#将str的'abc'换成后面的
 
-
+#六、
 
 
 

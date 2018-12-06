@@ -22,6 +22,14 @@ student = {'小萌': '1001', '小智': '1002', '小强': '1003', '小明': '1004
 new_dict = {v : k for k, v in dict.items()}#将原字典翻转
 new_dict ['1001']
 
+#分离key和value
+key=[]
+value=[]
+for i in dict.keys():#遍历坐标
+	key.append(i)
+	value.append(dict[i])
+
+
 
 ##三、list
 
