@@ -22,6 +22,9 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 #path=r'C:\Users\mrliangcb\Desktop\note\extra_feature\nparray'
 #tmp=glob.glob(r'{}\*.inkml'.format(path)) #找出符合条件的全名
 
+#image_list = glob.glob(equal_path + r'*.png')
+#for im_name in image_list:
+
 #四、listdir用法
 #tmp2=os.listdir(path)#获得当前文件夹下所有文件名
 
@@ -29,7 +32,9 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 str=r'abcdef'
 str=str.replace('abc','hahaha')#将str的'abc'换成后面的
 
-#六、
-
-
+#六、分解文件名
+#head, tail = os.path.split(im_name)
+# a = "hello,python,Good Night"
+# a.split(',')
+# ['hello', 'python', 'Good Night']
 
