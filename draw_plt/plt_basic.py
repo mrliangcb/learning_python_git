@@ -85,3 +85,6 @@ plt.show()
 #plt.imshow(im.astype('uint8'), cmap='gray')通常这样可视化图像
 #edge1 = edge1.data.squeeze().numpy()# 将输出转换为图片的格式
 #plt.imshow(edge1, cmap='gray')
+
+#scatter
+#plt.scatter(x.data.numpy()[:, 0], x.data.numpy()[:, 1], c=pred_y, s=4, lw=0.1, cmap='RdYlGn')
