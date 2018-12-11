@@ -5,6 +5,7 @@ from torch.autograd import Variable
 
 
 
+
 a = np.array([[1,2,3],
 				[6,4,5],
 				[8,10,9]])
