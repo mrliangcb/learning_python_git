@@ -51,19 +51,34 @@ def mnist_dataLoader(path):
 	
 	transform = transforms.Compose(
 			[transforms.Grayscale(),  # CROHME png are RGB, but already 32x32
-			transforms.Resize(28),#Scale
+			transforms.Resize(96),#Scale
 			transforms.ToTensor(),
 			transforms.Normalize((0.5,), (0.5,))])
 			
-	train_set = mnist.MNIST(path, train=True, transform=transform, download=False) # 重新载入数据集，申明定义的数据变换
-	test_set = mnist.MNIST(path, train=False, transform=transform, download=False)
+	def data_tf(x):
+		
+		x = x.resize((28, 28), 2)#图像放大到96*96
+		x=np.expand_dims(x,axis=0)#增加维度，原本为28*28
+		x = np.array(x, dtype='float32') / 255
+		x = (x - 0.5) / 0.5 # 标准化，这个技巧之后会讲到
+		#x = x.reshape((-1,)) # 拉平
+		#x = x.transpose((2, 0, 1))
+		x = torch.from_numpy(x)
+		return x
 	
+	
+	train_set = mnist.MNIST(path, train=True, transform=data_tf, download=False) # 重新载入数据集，申明定义的数据变换
+	test_set = mnist.MNIST(path, train=False, transform=data_tf, download=False)
+	test_set=torch.utils.data.Subset(test_set,np.arange(0,100,1))#按照下标取数据集
+	
+	
+	#print(len(torch.utils.data.sampler.SequentialSampler(train_set)))
 	print('训练集长度',len(train_set))#60000
 	print('测试集长度',len(test_set))#10000
 	a, a_label = train_set[0]
 	print(a.shape)
 	print(a_label)
-	batch=64
+	batch=100
 	trainloader = DataLoader(train_set, batch_size=batch, shuffle=True)
 	testloader = DataLoader(test_set, batch_size=batch, shuffle=False)
 	return trainloader,testloader,batch

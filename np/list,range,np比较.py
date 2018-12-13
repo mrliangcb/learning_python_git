@@ -96,6 +96,11 @@ print('0矩阵：\n',a)
 
 #np.ones
 
+#产生随机数
+
+
+
+
 e=np.arange(12,dtype=np.int32).reshape((3,4))
 print('e是:\n',e)#reshape前，(12,)  后是(3,4)
 
