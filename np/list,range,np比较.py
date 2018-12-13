@@ -96,8 +96,9 @@ print('0矩阵：\n',a)
 
 #np.ones
 
-#产生随机数
-
+#产生随机数(不重复，且整数)
+b=np.arange(100,dtype=np.int)
+a=np.random.choice(b,10)
 
 
 
