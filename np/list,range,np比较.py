@@ -10,6 +10,15 @@ file = open(path)
 a = file.readlines()#按行读取，作为字符型
 a=[[一行],[二行],['1','2']]#,为分隔符
 
+
+with open(r'.\trainLabels.csv', 'r') as f:
+	lines = f.readlines()[1:]
+	tokens = [i.rstrip().split(',') for i in lines]
+	idx_label = dict((int(idx), label) for idx, label in tokens)#创建字典，数字：‘名字’
+	print(tokens)
+
+
+
 #求最大
 #max(list[]),min(list[])
 
@@ -21,6 +30,10 @@ student = {'小萌': '1001', '小智': '1002', '小强': '1003', '小明': '1004
 #根据value返求key
 new_dict = {v : k for k, v in dict.items()}#将原字典翻转
 new_dict ['1001']
+
+print(idx_label.values())#
+print(idx_label.keys())
+
 
 #分离key和value
 key=[]

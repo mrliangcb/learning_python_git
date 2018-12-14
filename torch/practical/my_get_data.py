@@ -69,9 +69,11 @@ def mnist_dataLoader(path):
 	
 	train_set = mnist.MNIST(path, train=True, transform=data_tf, download=False) # 重新载入数据集，申明定义的数据变换
 	test_set = mnist.MNIST(path, train=False, transform=data_tf, download=False)
-	test_set=torch.utils.data.Subset(test_set,np.arange(0,100,1))#按照下标取数据集
+	#b=np.arange(100,dtype=np.int)#产生0~100
+	#a=np.random.choice(b,10)#从上面随机取10个，而且不重复
+	#test_set=torch.utils.data.Subset(test_set,np.arange(0,100,1))#按照下标取数据集
 	
-	
+
 	#print(len(torch.utils.data.sampler.SequentialSampler(train_set)))
 	print('训练集长度',len(train_set))#60000
 	print('测试集长度',len(test_set))#10000
