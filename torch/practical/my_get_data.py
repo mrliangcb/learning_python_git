@@ -6,9 +6,9 @@ import torch
 import torchvision
 import torchvision.transforms as transforms
 import torch.optim as optim
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib as mpl
+#import matplotlib as mpl
 import torch.nn as nn
 import torch.nn.functional as F
 import pandas as pd
@@ -21,15 +21,15 @@ def get_dataLoader(path):
 	
 	transform = transforms.Compose(
 		[transforms.Grayscale(),  # CROHME png are RGB, but already 32x32
-		#transforms.Scale(96),
+		transforms.Scale(96),
 		transforms.ToTensor(),
 		transforms.Normalize((0.5,), (0.5,))])
 	fulltrainset = torchvision.datasets.ImageFolder(root=path, transform=transform)
 	a_part = int(len(fulltrainset) / 10)
 	trainset, validationset, testset = torch.utils.data.random_split(fulltrainset, [8 * a_part, a_part,len(fulltrainset) - 9 * a_part])
-	print('training_all:',len(trainset))#51480
-	print('vali_all',len(validationset))#17160
-	print('test_all',len(testset))
+	print('训练集长度:',len(trainset))#51480
+	print('测试集长度',len(validationset))#17160
+	print('测试',len(testset))
 	
 	trainloader = torch.utils.data.DataLoader(trainset, batch_size=minibatchsize,
 											shuffle=True, drop_last=True)#, num_workers=1
@@ -46,8 +46,8 @@ def get_dataLoader(path):
 	
 from torchvision.datasets import mnist
 def mnist_dataLoader(path):
-	#train_set = mnist.MNIST(path, train=True, download=False)
-	#test_set = mnist.MNIST(path, train=False, download=False)
+	train_set = mnist.MNIST(path, train=True, download=True)
+	test_set = mnist.MNIST(path, train=False, download=True)
 	
 	transform = transforms.Compose(
 			[transforms.Grayscale(),  # CROHME png are RGB, but already 32x32
@@ -67,8 +67,8 @@ def mnist_dataLoader(path):
 		return x
 	
 	
-	train_set = mnist.MNIST(path, train=True, transform=data_tf, download=False) # 重新载入数据集，申明定义的数据变换
-	test_set = mnist.MNIST(path, train=False, transform=data_tf, download=False)
+	train_set = mnist.MNIST(path, train=True, transform=data_tf, download=True) # 重新载入数据集，申明定义的数据变换
+	test_set = mnist.MNIST(path, train=False, transform=data_tf, download=True)
 	#b=np.arange(100,dtype=np.int)#产生0~100
 	#a=np.random.choice(b,10)#从上面随机取10个，而且不重复
 	#test_set=torch.utils.data.Subset(test_set,np.arange(0,100,1))#按照下标取数据集
@@ -83,7 +83,7 @@ def mnist_dataLoader(path):
 	batch=100
 	trainloader = DataLoader(train_set, batch_size=batch, shuffle=True)
 	testloader = DataLoader(test_set, batch_size=batch, shuffle=False)
-	return trainloader,testloader,batch
+	return trainloader,testloader,batch,len(train_set)
 			
 			
 			

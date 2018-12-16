@@ -112,8 +112,7 @@ print('0矩阵：\n',a)
 #产生随机数(不重复，且整数)
 b=np.arange(100,dtype=np.int)
 a=np.random.choice(b,10)
-
-
+#c2=c[a]#抽取list c的10个样本
 
 e=np.arange(12,dtype=np.int32).reshape((3,4))
 print('e是:\n',e)#reshape前，(12,)  后是(3,4)
@@ -122,12 +121,6 @@ e=e.transpose(1,0)#调换维度
 print(e)
 #b=np.expand_dims(a,axis=0)#增加维度
 #c=np.squeeze(b)#删除维度为1的
-
-
-
-
-
-
 
 
 

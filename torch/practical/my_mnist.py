@@ -20,7 +20,7 @@ if server:
 	path=r'./MNIST_data'
 else:
 	path = r'./MNIST_data'
-trainloader,testloader,minibatchsize=my_get_data.mnist_dataLoader(path)
+trainloader,testloader,minibatchsize,train_long=my_get_data.mnist_dataLoader(path)
 
 
 
@@ -64,7 +64,9 @@ for epoch in range(num_epochs):
 
 	for i, data in enumerate(trainloader, 0):
 		net.train()
-		print('now_batch:{} / |共epoch:{}'.format(i,num_epochs),end="\r")
+		
+		runed=round(nb_used_sample/(train_long*num_epochs),3)
+		print('now_batch:{} / |共epoch:{} | {:.3%}'.format(i,num_epochs,runed),end="\r")#显示进度
 		inputs, labels = data
 		inputs=Variable(inputs)
 		labels=Variable(labels)
@@ -119,10 +121,11 @@ for epoch in range(num_epochs):
 						pre = torch.max(outputs,1)[1].data.numpy()
 					
 					vali_accuracy=np.sum(pre==vali_y)/len(vali_y)
-					print('how_many right:{}/{}'.format(np.sum(pre==vali_y),len(vali_y)))
-					print('{}_test_acc:{:.4%}'.format(flag,vali_accuracy))
+					
 					if flag>=10:
 						break
+				print('how_many right:{}/{}'.format(np.sum(pre==vali_y),len(vali_y)))
+				print('{}_test_acc:{:.4%}'.format(flag,vali_accuracy))
 						# cal_acc+=vali_accuracy
 						# vali_num+=len(vali_y)
 				# val_err = (totalValLoss / vali_num)
