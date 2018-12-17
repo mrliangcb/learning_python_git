@@ -1,6 +1,6 @@
 #torch读数据
 #https://github.com/L1aoXingyu/code-of-learn-deep-learning-with-pytorch/blob/master/chapter8_PyTorch-Advances/data-io.ipynb
-
+from torch.utils.data import DataLoader
 from torchvision.datasets import ImageFolder
 # folder_set = ImageFolder(r'C:\Users\mrliangcb\Desktop\笔记整理\pytorch\example_data\image\\')
 # print(folder_set.class_to_idx)
@@ -49,7 +49,7 @@ class custom_dataset(Dataset):
 		self.img_list = [i.split(',')[0] for i in lines] # split是设置分隔的得到所有的图像名字，用i遍历行
 		self.label_list = [i.split(',')[1] for i in lines] # 得到所有的 label 
 	#上面执行完就进入下面
-	def __getitem__(self, idx): # 根据 idx 取出其中一个
+	def __getitem__(self, idx): # 提供用法 实例名[下标]
 		print('进入1')
 		img = self.img_list[idx]
 		label = self.label_list[idx]
@@ -57,7 +57,7 @@ class custom_dataset(Dataset):
 			img = self.transform(img)
 		return img, label
 	#上面return之后就不运行下面了
-	def __len__(self): # 总数据的多少
+	def __len__(self): # 提供用法 len(实例名)
 		print('进入2')
 		return len(self.label_list)
 
@@ -94,7 +94,7 @@ print(train_data2)
 
 
 #dataloader
-from torch.utils.data import DataLoader
+
 train_data1 = DataLoader(folder_set, batch_size=2, shuffle=True) #迭代器只是只做了目录，虚拟tensor
 #2个数据作为一个batch
 for img,label in train_data1 :
