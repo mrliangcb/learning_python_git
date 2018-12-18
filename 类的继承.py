@@ -20,7 +20,14 @@ class exa3(exa1):#继承了exa1
 	def fc(self):
 		print('exa3_self_function')#初始化时没有运行这个
 		exa1.fc()#调用继承了的类exa1中的方法(调用父类方法)
-
+	def __len__(self):
+		print('进入len')
+		return 10#不能返回 str型
+		
+	def __getitem__(self, idx):
+		print('进入getitems')
+		a=[1,2,3]
+		return a[idx]
 	
 a=exa1()
 b=exa2()
@@ -30,8 +37,10 @@ b=exa2()
 c=exa3()
 c.fc()
 
+print('返回len',len(c))
+print('返回getitm',c[2])
 
-
+print('##########   super 用法  ##########')
 class A:
 	def __init__(self):
 		print("5")
