@@ -8,15 +8,13 @@
 -
 
 ---
-    %两个tab
-    That is my tutorial 
-    numpy/ pandas / os /list
-    '部分' '高亮'
 
 ```
-123
-123
-1234
+%两个tab
+That is my tutorial 
+numpy/ pandas / os /list
+'部分' '高亮'
+
 ```
 
 
