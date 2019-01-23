@@ -1,25 +1,6 @@
-# learning_python_git
-
-## record the procedure of learning ML
-
-
-### [1.numpy](https://github.com/mrliangcb/learning_python_git/tree/master/np )
-#### [1.numpy](./np )
-###123
--
-
----
-
-```
-%两个tab
-That is my tutorial 
-numpy/ pandas / os /list
-'部分' '高亮'
-
-```
-
-
-`部分` `高亮`
+# learning_python
+##[1.numpy](./np)
+##[2.pandas](./pandas)
 
 
 
