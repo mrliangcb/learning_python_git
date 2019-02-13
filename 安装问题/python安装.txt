@@ -1,0 +1,25 @@
+python安装
+
+linux版
+通常linux内置2.7(python)和3.5(python3)
+
+先把3.5卸载干净
+sudo apt-get remove python3.5
+sudo apt-get remove --auto-remove python3.5
+sudo apt-get purge python3.5
+sudo apt-get purge --auto-remove python3.5
+
+安装3.6
+sudo add-apt-repository ppa:jonathonf/python-3.6
+sudo apt update   先更新
+sudo apt-get install python3.6
+于是python3就直接指向py3.6了
+
+修改指向
+cd /usr/lib目录下有python python3 python3.6等等
+sudo rm python  删除python 快捷键
+cp python3.6 python 创建python快捷键，内容为py3.6
+
+
+
+
