@@ -95,6 +95,7 @@ print('删除a[0]:\n',a)
 np.linspace(0, 10, 1000)
 #0到10之间分成1000份
 
+将list转为numpy 矩阵
 c=np.array([[1,2,3],
 	           [4,5,6],
 	           [7,8,9]],dtype=np.int)
