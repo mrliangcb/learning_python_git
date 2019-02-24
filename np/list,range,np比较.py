@@ -120,7 +120,7 @@ a=np.random.choice(b,10)
 e=np.arange(12,dtype=np.int32).reshape((3,4))
 print('e是:\n',e)#reshape前，(12,)  后是(3,4)
 
-e=e.transpose(1,0)#调换维度
+e=e.transpose(1,0)#调换维度,也是转置  np.T也行的
 print(e)
 #b=np.expand_dims(a,axis=0)#增加维度
 #c=np.squeeze(b)#删除维度为1的
@@ -177,4 +177,16 @@ print(a.ravel())#不改变原a，返回一个一维的np
 np.random.shuffle(sample)
 
 
-#类型转换.astype(np.float32)
+#类型转换np.astype(np.float32)
+#float(*)
+#.float()
+#list: 
+
+#np和for 
+#a=[[1,2,3],[4,5,6],[7,8,9]]
+#f=[i for i in a]  #遍历处理的东西，放回list中，for和list.append融合的高效写法
+
+#矩阵转置
+#
+
+

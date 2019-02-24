@@ -23,6 +23,8 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(4)))
 #三、找出文件名glob用法
 #path=r'C:\Users\mrliangcb\Desktop\note\extra_feature\nparray'
 #tmp=glob.glob(r'{}\*.inkml'.format(path)) #找出符合条件的全名
+#如果有多级目录还可以用*代替 例如a\*\*\*.inkml 中间*会自动遍历
+
 
 #image_list = glob.glob(equal_path + r'*.png')
 #for im_name in image_list:
