@@ -1,7 +1,7 @@
 # learning_python
 ## [1.numpy](./np)
-  读取文件:open方式，(1)可以参考[pytorch读csv](../torch/read_csv.py)
-  
+  读取文件:(1)open方式，可以参考[pytorch读csv](../torch/read_csv.py)
+  (2)np.loadtxt
   
 ## [2.pandas](./pandas)
   (1)用pandas打开csv文件
