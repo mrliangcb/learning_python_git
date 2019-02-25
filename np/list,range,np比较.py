@@ -89,6 +89,12 @@ del a[:]#长度减少了
 print('删除a[0]:\n',a)
 
 
+#判断是否为空
+abc=[]
+print(len(abc))#=0就为空
+
+
+
 
 #四、numpy
 
@@ -189,5 +195,34 @@ np.random.shuffle(sample)
 
 #矩阵转置
 #
+
+#乱序方法
+
+import random
+
+random.shuffle(list)#直接打乱，洗牌
+random.sample(indexList, 5)#打乱，然后抽样5个，不重复
+
+
+#打包遍历for 
+#主要用于绑定图片和对应的label
+#queue=[]
+#for data,label in zip(list1,list2)
+	#queue.append((data,label))
+#然后shuffle，data和label依然对的上
+
+#第二种打包
+# >>>seq = ['one', 'two', 'three']
+# >>> for i, element in enumerate(seq):
+# ...     print i, element
+# 0 one
+# 1 two
+# 2 three
+
+
+
+
+
+
 
 

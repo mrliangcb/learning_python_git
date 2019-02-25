@@ -48,3 +48,12 @@ str=str.replace('abc','hahaha')#将str的'abc'换成后面的
 # root 所指的是当前正在遍历的这个文件夹的本身的地址
 # dirs 是一个 list ，内容是该文件夹中所有的目录的名字(不包括子目录)
 # files 同样是 list , 内容是该文件夹中所有的文件(不包括子目录)
+
+
+#八、
+
+os.getcwd()#当前脚本路径
+os.path.dirname(path)#取得path路径的父路径
+os.path.basename(path)#取得路径的最后一项
+#作用：可以先把数据分好类放在各个文件夹，然后用glob搜索全部图片，然后根据路径可以提取label和处理自定义数据
+

@@ -14,6 +14,6 @@ for i in a:#遍历每个元素
 # os.rename(target,'C:\lcb\learning_python_git\extradoc\TP-MLP\which_symbol\serve_version\b\abcde')
 #复制文件
 # shutil.copytree("olddir","newdir") #olddir和newdir都只能是目录，且newdir必须不存在
-# shutil.copy("./hoem/123.png","./home/dir") #olddir和newdir都只能是目录，且newdir必须不存在
+# shutil.copy("./hoem/123.png","./home/dir") #old可以是文件全名/home/123.txt  new可以是一个目录/home/lcb/data
 #源和目标都可以是文件夹或者文件
-
+#
