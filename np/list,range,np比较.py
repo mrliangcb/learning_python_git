@@ -220,6 +220,13 @@ random.sample(indexList, 5)#打乱，然后抽样5个，不重复
 # 2 three
 
 
+#np乘法
+np.dot()  横乘以竖
+np.multiply()  对应相乘
+
+#矩阵转置
+array.T
+常用np.dot(a,b.T)，序列求乘积的和
 
 
 
