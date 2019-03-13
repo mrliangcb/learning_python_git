@@ -229,6 +229,11 @@ array.T
 常用np.dot(a,b.T)，序列求乘积的和
 
 
+#两个列表打包一起乱序
+import random
+c = list(zip(a, b))
+random.shuffle(c)
+a[:], b[:] = zip(*c)
 
 
 

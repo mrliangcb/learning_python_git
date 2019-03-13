@@ -1,0 +1,9 @@
+QLabel#obname{font-size:20px;color:blue;
+		}
+QLabel#alert[notice_level="warning"]{color:red; border-color: blue;
+		}
+
+QPushButton#obname{font-size:20px;color:blue;
+		}
+		
+		

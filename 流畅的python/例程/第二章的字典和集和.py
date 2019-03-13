@@ -10,6 +10,7 @@ e = dict({'three': 3, 'one': 1, 'two': 2})
 
 
 #遍历创建字典
+#idx_label = dict((int(idx), label) for idx, label in tokens)
 r = range(5)
 d = {n * 2: n for n in r if n < 3}
 print(d)

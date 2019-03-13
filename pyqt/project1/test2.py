@@ -99,7 +99,6 @@ class Example(QWidget):
 		
 		#第二个水平图层
 		h_edit= QHBoxLayout()
-		
 		h_edit.addWidget(self.lb)
 		h_edit.addWidget(self.edit)#放在水平中间btn
 		h_edit.addWidget(self.btn)
