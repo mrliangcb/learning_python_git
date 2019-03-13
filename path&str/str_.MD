@@ -1,9 +1,9 @@
 # str处理，正则表达,print,文件处理
-import numpy as np
-import pandas as pd
-import random
-import glob
-import os
+import numpy as np  
+import pandas as pd  
+import random  
+import glob  
+import os  
 
 ### 1.  .format用法  
 print('hello {:0>3}'.format(1))  
