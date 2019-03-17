@@ -6,6 +6,10 @@ x = np.linspace(0, 10, 1000)
 y=x**2
 z=np.sin(x)
 
+plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+# 这两条可以使得标题和图例显示中文
+
 #用figure创建主图，用subplot创建子图
 fig=plt.figure(num='第一个对象',figsize=(8,4))
 
@@ -38,10 +42,11 @@ plt.grid(True)#网格模式
 
 
 
-# plt.pause(2)#但如果重复画图的话，不会重置图像需要ax1.cla()  clf()来清除  close（）只是关掉窗口
-plt.show()
-
-
+# plt.pause(2)#但如果重复画图的话，不会重置图像需要ax1.cla()  clf()来清除  close（）只是关掉窗口  或者重新设置窗口也是可以的
+plt.show() #
+# plt.pause(15)#
+# plt.close()#这个是关闭窗口
+#plt.clf()#清空画布上所有内容
 
 # 颜色（color 简写为 c）：
 # 蓝色： 'b' (blue)
@@ -88,3 +93,7 @@ plt.show()
 
 #scatter
 #plt.scatter(x.data.numpy()[:, 0], x.data.numpy()[:, 1], c=pred_y, s=4, lw=0.1, cmap='RdYlGn')
+
+
+
+#https://blog.csdn.net/u013468614/article/details/58689735 动态显示！
