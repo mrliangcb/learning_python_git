@@ -1,43 +1,25 @@
+
+#一.range,dict,list,numpy 的用法
+
+
 import numpy as np
 
-
-##一、py
+#1.range
 a=range(0,3,1)
-print(a)#range类型1到3
-print(type(a))
-读取
-file = open(path)
-a = file.readlines()#按行读取，作为字符型  ['第一行'，'第二行']
-
-#如果file.readline 就是得到一个字符型，内容为第一行
-
-with open(r'.\trainLabels.csv', 'r') as f:
-	lines = f.readlines()[1:]
-	tokens = [i.rstrip().split(',') for i in lines]#rstrip('内容') 删除字符串末尾的'内容'
-	#经过split
-	#a=[[一行],[二行],['1','2']]#,为分隔符
-	idx_label = dict((int(idx), label) for idx, label in tokens)#创建字典，数字：‘名字’
-	print(tokens)
-
-
-
-#求最大
-#max(list[]),min(list[])
 
 
 
 
-##二、字典
+
+#2.dict
 student = {'小萌': '1001', '小智': '1002', '小强': '1003', '小明': '1004'}
-#根据value返求key
+# (1)根据value返求key
 new_dict = {v : k for k, v in dict.items()}#将原字典翻转
 new_dict ['1001']
-
-print(idx_label.values())#
+print(idx_label.values())
 print(idx_label.keys())
 
-
-#分离key和value
+# (2)分离key,value
 key=[]
 value=[]
 for i in dict.keys():#遍历坐标
@@ -46,77 +28,58 @@ for i in dict.keys():#遍历坐标
 
 
 
-##三、list
+#3.list
+#(1)如果list要看shape，就先转成np：np.array(*)然后再看shape)  type
 
-#如果list要看shape，就先转成np：np.array(*)然后再看shape
-b=[1,2,3]
-print(b)
-print(type(b))
+#(2)建立短list:  b=[1,2,3]
 
-d=np.arange(1,4,1).tolist()
-print('\n一次创建多位list:\n',d)
+#(3)建立长list:  d=np.arange(1,4,1).tolist()
 
-a=list('abc')
-print('产生list 的str:\n',a)
+#(4)str转为list:  a=list('abc')
 
-#把str按照逗号为分隔符，分开后装到list
-[i.split(',')[0] for i in lines]
+#(5)把str按照逗号为分隔符，分开后装到list  [i.split(',')[0] for i in lines]
 
-#增加
+#(6)增添元素
 #.append()   .extend()
 #.insert(1,'x')在1的位置增加上x
 #两个list相加，尽量用append，没有额外用内存
 
-
-#排序
+#(7)排序
 #lista.sort(reverse = True) #reverse = True 降序， reverse = False 升序（默认）。
 
-#numpy.sort(a, axis=1, kind='quicksort', order=None)
-
-#
-
-#删除
+#(8)删除
 a=np.array([1,2,3]).tolist()
-a.remove(1) #删除value=1的
+a.remove(1)#删除一个元素1
 print('删除元素:\n',a)
 #while 0 in selected:
-#	selected.remove(0)
-
+#	selected.remove(0) #删除多个元素1要用while
 # print('pop返回:\n',a.pop(0))#默认是最后一个
 # print('删除第0位置:\n',a)
+# del a[:]   del a[0]
 
-del a[:]#长度减少了
-print('删除a[0]:\n',a)
-
-
-#判断是否为空
+#(9)判断是否为空
 abc=[]
 print(len(abc))#=0就为空
 
 
 
 
-#四、numpy
+#4.numpy
 
-np.linspace(0, 10, 1000)
-#0到10之间分成1000份
+# (1)建立np
 
-将list转为numpy 矩阵
-c=np.array([[1,2,3],
-	           [4,5,6],
-	           [7,8,9]],dtype=np.int)
-print('\nc是:\n',c)
+np.arange(1,4,1,dtype=np.int32)
 
-d=np.arange(12,20,2,dtype=np.int32)
-print('\nd是:\n',d)
+np.linspace(0, 10, 1000)#0到10之间平均分成1000分
 
-d=np.arange(12)
-print('只产生12个数\n',d)
+np.array([[1,2,3],
+			[4,5,6],
+			[7,8,9]],dtype=np.int)
 
-a=np.zeros(shape=(3,4))
-print('0矩阵：\n',a)
+#生成0矩阵
+np.zeros(shape=(3,4))
+# np.ones
 
-#np.ones
 
 #产生随机数(不重复，且整数)
 b=np.arange(100,dtype=np.int)
@@ -139,15 +102,8 @@ a=np.array([1,2,3])
 b=a.tolist()
 print(b)
 
-
-
 # listh转array
 print(np.array(b))
-
-
-
-
-
 
 
 # #矩阵拼接
@@ -234,11 +190,6 @@ import random
 c = list(zip(a, b))
 random.shuffle(c)
 a[:], b[:] = zip(*c)
-
-
-
-
-
 
 
 
