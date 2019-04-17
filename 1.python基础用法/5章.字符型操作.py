@@ -40,7 +40,15 @@ str=r'abcdef'
 str=str.replace('abc','hahaha')#将str的'abc'换成后面的  
 
 
+# 7.walk用法
+file_dir=r'C:\Users\mrliangcb\Desktop\pyqt_test\result'
+for root, dirs, files in os.walk(file_dir):
+	#print(root) #当前目录路径  
+	#print(dirs) #当前路径下所有子目录  
+	print(files) #当前路径下所有非目录子文件  
+name=int(files[0][0])
 
+b=os.listdir(file_dir)
 
 
 

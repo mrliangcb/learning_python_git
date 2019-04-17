@@ -1,12 +1,12 @@
 
 #三.文件操作
 
-file = open(path)
-a = file.readlines()#按行读取，作为字符型  ['第一行'，'第二行']
+# file = open(path) #file指向地址
+# a = file.readlines() #按行读取，作为字符型  ['第一行'，'第二行']
 
 #如果file.readline 就是得到一个字符型，内容为第一行
 
-with open(r'.\trainLabels.csv', 'r') as f:
+with open(r'.\trainLabels.csv', 'r') as f: #f指向这个地址
 	lines = f.readlines()[1:]
 	tokens = [i.rstrip().split(',') for i in lines]#rstrip('内容') 删除字符串末尾的'内容'
 	#经过split
