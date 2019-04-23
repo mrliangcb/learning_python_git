@@ -2,7 +2,8 @@
 
 
 #max(list[]),min(list[])
-
+#*
+#mul
 
 
 

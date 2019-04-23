@@ -34,7 +34,7 @@ for i in dict.keys():#遍历坐标
 #(2)建立短list:  b=[1,2,3]
 
 #(3)建立长list:  d=np.arange(1,4,1).tolist()
-
+#				d=list(range(0,10,1))
 #(4)str转为list:  a=list('abc')
 
 #(5)把str按照逗号为分隔符，分开后装到list  [i.split(',')[0] for i in lines]
@@ -118,6 +118,7 @@ print(a.ravel())#不改变原a，返回一个一维的np
 
 
 #np读取
+#np.load()
 #np.loadtxt(path,delimiter=',',dtype=str)逗号作为分隔，要不然逗号也含在[]里，如果文件本身的类型是str
 # print('第一行:\n',a[0])
 # print('第一行，第一个字符:\n',a[0][0])
