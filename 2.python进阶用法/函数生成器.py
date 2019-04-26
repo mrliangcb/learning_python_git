@@ -44,7 +44,7 @@ print('\n关于c生成器\n')
 def c(start):
 	while start <10:
 		print('yield之前')
-		temp =yield start
+		temp =yield start  #yield有点像return  下一次next就运行temp=  开始
 		print('yield之后')
 		print(temp)
 		start+=1
