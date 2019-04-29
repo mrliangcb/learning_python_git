@@ -83,11 +83,40 @@ def a(n):
 
 这一课的14:30还没看  
 
+动态规划，递归  
+leetcode.com/problemset/all/  
 
+n^2 的 复杂度：
+		1  
+	1	2  
+		3  
+		1  
+	2	2  
+		3  
+	……
+	
 
+题目实战：  
+哈希法高效  
+class Solution(object):
+	def twoSum(elf,nums,target): #没有构造函数
+		if len(nums)<=1:
+			return False
+		buff_dict={} #创建字典
+		for i in range(len(nums)):
+			if nums[i] in buffer_dict:
+				return [buff_dict[nums[i]],i]
+			else:
+				buff_dict[target-nums[i]]=i
+	
+数组链表
+array  list
 
+list用链表 改善插入和删除  on变成o1
+list善于查找  
 
-
+双链表  前后箭头
+翻转链表
 
 
 
