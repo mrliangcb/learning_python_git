@@ -1,9 +1,12 @@
-#iterator
-#迭代器
+#魔术方法
+
+#所谓的魔法方法，就是python类中的特殊方法
+#例如:(1)__init__  (2)__iter__ (3)__next__ (4)__len__等等 
+# 这里 iter引入类的迭代器
+
 #可以用for循环遍历的，叫做可迭代对象  list tuple dict set  str
 #生成器也是可迭代的
 #一个可迭代对象，是有__iter__方法的,并且会返回一个迭代器对象
-
 # isinstance()是否是可迭代对象
 # from collection import Iterable
 
@@ -23,8 +26,16 @@ class iteration():
 			raise StopIteration #遍历到末尾就停止
 		self.value += 1
 		return self.value ** 2
+	def __len__(self):
+		print ("进入 __len__")
+		return 1
 
 test=iteration(1,4) #这里只运行init方法
+len(test)
+
+
+
+
 for i in test:
 	print("遍历结果:",i)
 #第一次进入迭代，就运行iter，然后再运行next一次
@@ -36,6 +47,17 @@ for i in test:
 
 # b=[1,2,3]
 # print(isinstance(b,Iterable))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
