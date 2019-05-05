@@ -1,7 +1,12 @@
-#draw line
+#第9章.plt画图
+#本文分为 (1)plt基础  (2)动态画线  (3)画学习曲线
 import numpy as np
 import matplotlib.pyplot as plt
 import pdb
+
+
+
+#################   (1)plt基础     ###################
 x = np.linspace(0, 10, 1000)
 y=x**2
 z=np.sin(x)
@@ -97,3 +102,65 @@ plt.show() #
 
 
 #https://blog.csdn.net/u013468614/article/details/58689735 动态显示！
+
+
+#################    二、动态划线     ###################
+# from matplotlib.animation import FuncAnimation
+# fig=plt.figure(num='第一个对象')
+# ax=plt.subplot(2,2,1)
+
+
+# xdata, ydata = [], []
+# ln, = ax.plot([], [], 'r-', animated=False)
+
+# def init():
+    # ax.set_xlim(0, 2*np.pi)
+    # ax.set_ylim(-1, 1)
+    # return ln,
+
+# def update(frame):
+    # xdata.append(frame)
+    # ydata.append(np.sin(frame))
+    # ln.set_data(xdata, ydata)
+    # return ln,
+
+# ani = FuncAnimation(fig=fig,func=update, frames=np.linspace(0, 2*np.pi, 128),
+                    # init_func=init,interval=20,blit=True)
+# plt.show()
+
+########################################################
+
+
+################### (3)画学习曲线  #####################
+# global_bath=df2.values
+# global_train=df3.values
+# global_loss=df4.values
+
+# fig=plt.figure(num='learning curve')
+# ax1=plt.subplot(1,2,1)
+# ax1.cla()
+# ax1.plot(global_bath,global_train,'b-',label="train_acc",linewidth=1)
+# # plt.title('acc')
+# plt.xlabel(u"epoch")#显示横轴名字
+# plt.ylabel(u"acc")
+# plt.legend()
+# plt.grid(True)
+# ax2=plt.subplot(1,2,2)
+# ax2.cla()
+# ax2.plot(global_bath,global_loss,'r-',label="train_loss",linewidth=1)
+# # plt.title('loss')
+# plt.xlabel(u"epoch")#显示横轴名字
+# plt.ylabel(u"loss")
+# plt.legend()
+# plt.grid(True)
+# plt.show()
+
+# #保存
+# png_path=r'./result/plt/{}.png'.format(epoch)
+########################################################################
+
+
+
+
+
+
