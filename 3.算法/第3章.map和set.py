@@ -15,14 +15,14 @@
 # 复杂度怎么会有log:
 # [1,2,3,4,5,6,7]  假设我们要找数组中6值的位置，我们假设每次都是做最坏打算的操作，中点为4，最坏我们搜索左边,即1/2 * 7= 3次,剩下4元，我们又分一半,4/2=2是先搜左边4,5,
 # 然后分半2/2=1 搜7,最后才是6    7*(1/2)^3=1    n=2^k  注意这里是搜索（二分搜索）不是遍历。排序，查找 一般最坏情况都是NlogN
-
+# 快排序的最坏情况n^2 平均是nlogn  取决于主元选的好不好 
 
 
 # 题目 242   anagram 字母都一样，但顺序不同的两个词.  cat  tac  atc   判断两个词是否这种情况
-# 快排序NlogN
+# 快排序平均复杂度NlogN
 # map计数{letter:出现次数}   因为要遍历字符串On  插入删除查询都O1  这个速度比快排序快
 
-#快排序  NlogN
+#快排序(二分法)  NlogN
 def test(s,t):
 	return sorted(s)==sorted(t) #先各自排序，然后判断是否一模一样
 
@@ -35,7 +35,7 @@ def test2(s,t):
 	for item in t:
 		dic2[item]=dic2.get(item,0)+1
 	return dic1==dic2
-
+# on复杂度
 print(test2('dabc','bacd'))
 
 
@@ -74,29 +74,30 @@ def threeSum(nums):
 	return map(list,res),res
 
 a,b=threeSum([-1,1,0,4,5,6])
+print('方法2',list(a))
 print(b)
 
 # 法三
 def threeSum2(nums):
 	res=[]
-	nums.sort()
-	for i in range(len(nums)-2):
-		if i>0 and nums[i]==nums[i-1]:
+	nums.sort()  #先对题目序列排序
+	for i in range(len(nums)-2): # 遍历0到倒数第3个
+		if i>0 and nums[i]==nums[i-1]: #若i>0  i的值等于前一个，则直接跳下一步
 			continue
-		l,r=i+1,len(nums)-1
-		while l<r:
-			s=nums[i]+nums[l]+nums[r]
-			if s<0:l+=1
+		l,r=i+1,len(nums)-1 #初始：取左右指针，i的下一个  和末尾的一个
+		while l<r:#左指针小于右指针
+			s=nums[i]+nums[l]+nums[r] #求和
+			if s<0:l+=1 #和小于目标，那就大一点，左边右移
 			elif s>0:r-=1
 			else:
-				res.append([nums[i],nums[l],nums[r]])
-				while l<r and nums[l]==nums[l+1]:
+				res.append([nums[i],nums[l],nums[r]]) #如果和等于目标，则保存这三个数  然后跳过重复元素
+				while l<r and nums[l]==nums[l+1]: #左指针小于右 ，左指针的下一个等于他
 					l+=1
-				while l<r and nums[r]==nums[r-1]:
+				while l<r and nums[r]==nums[r-1]:# 右指针与左边一个相同，则左移
 					r-=1
-				l+=1;r-=1
+				l+=1;r-=1 #左指针右移，右指针左移  就是左边大了一点，右边小了一点   直到左右指针相遇就结束，然后下一个i
 	return res
-b=threeSum2([-1,1,0,4,5,6])
+b=threeSum2([-1,1,0,-1,5,6])
 print(b)
 
 
