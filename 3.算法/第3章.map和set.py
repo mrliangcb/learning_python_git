@@ -41,7 +41,8 @@ print(test2('dabc','bacd'))
 # two sum   three sum 用map解决 
 # [2,7,11,15]   和9   返回下标[0,1]
 # 法一：暴力for循环,On^2
-# 法二：set 
+# 法二：set x+y=9转化为y=9-x   On找x,set为9-x(O1)    
+#
 
 
 
