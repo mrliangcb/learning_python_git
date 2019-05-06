@@ -11,15 +11,24 @@ x = np.linspace(0, 10, 1000)
 y=x**2
 z=np.sin(x)
 
+# 这两条可以使得标题和图例显示中文
 plt.rcParams['font.sans-serif']=['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
-# 这两条可以使得标题和图例显示中文
+plt.clf()#初始化清空，循环画图经常用到
+
 
 #用figure创建主图，用subplot创建子图
 fig=plt.figure(num='第一个对象',figsize=(8,4))
 
+#下面两条使得显示中文label/title正常
+plt.rcParams['font.sans-serif']=['SimHei']
+plt.rcParams['axes.unicode_minus'] = False
+
+
+
 ax1=plt.subplot(1,2,1)#ax1指针指向当前这个窗口显示4个子图，最后一个参数表示第一个子图
 ax1.plot(x,y,'r-',label="x^2",linewidth=1,markerfacecolor='blue',markersize='5')
+ax1.set_title('第一子图')#第一个子图的名字
 plt.text(1,1,(1,1),ha='center', va='bottom', fontsize=10)
 plt.title('R channel')
 plt.xlabel(u"Time(s)")#显示横轴名字
@@ -39,6 +48,13 @@ plt.title(u"PyPlot First Example")
 plt.legend()#图例生效
 plt.grid(True)#网格模式
 
+ax2.spines['right'].set_color('none')
+ax2.spines['top'].set_color('none')
+ax2 = plt.gca()
+# for xtick in ax1.get_xticklabels():  #把所有横坐标旋转50度
+		# xtick.set_rotation(50)
+#设置子图间距
+plt.tight_layout()
 #保存
 #plt.savefig(r'C:\Users\mrliangcb\Desktop\笔记整理\python\画图\tessstttyyy.png')#保存图片，正确运行
 

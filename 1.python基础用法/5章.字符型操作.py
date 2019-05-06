@@ -50,10 +50,17 @@ name=int(files[0][0])
 
 b=os.listdir(file_dir)
 
+# 8.os用法
+# os.getcwd()#当前脚本路径
+# os.path.dirname(path)#取得path路径的父路径
+# os.path.basename(path)#取得路径的最后一项
 
-
-
-
+# 9.format和eval的结合
+#如果要读s1  s2 s3 等等变量，如何遍历
+# for i in range(1,4):
+	# name='{}{}'.format('s',i)#拼成's1'  's2'
+	# s=eval(name)#找到这个变量并返回
+	# print(s)
 
 
 

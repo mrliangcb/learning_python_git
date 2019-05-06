@@ -4,7 +4,8 @@
 #max(list[]),min(list[])
 #*
 #mul
-
+#np.dot
+#np.multiply
 
 
 

@@ -1,7 +1,7 @@
 #7章.类的使用
 
-#参考
-#https://blog.csdn.net/Marksinoberg/article/details/69482397
+# 这里以二叉树为例子，学习类的使用
+#参考 https://blog.csdn.net/Marksinoberg/article/details/69482397
 import numpy as np
 class BinaryTree:
 	def __init__(self,rootObj=None):#儿子的，一创建运行，=Binary(rootobj)  self只是声明这个是对象自己的，就像c++的非static   无self=static
