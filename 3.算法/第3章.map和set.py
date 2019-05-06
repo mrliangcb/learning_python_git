@@ -14,7 +14,8 @@
 
 # 复杂度怎么会有log:
 # [1,2,3,4,5,6,7]  假设我们要找数组中6值的位置，我们假设每次都是做最坏打算的操作，中点为4，最坏我们搜索左边,即1/2 * 7= 3次,剩下4元，我们又分一半,4/2=2是先搜左边4,5,
-# 然后分半2/2=1 搜7,最后才是6    7*(1/2)^3=1    n=2^k  注意这里是搜索（二分搜索）不是遍历
+# 然后分半2/2=1 搜7,最后才是6    7*(1/2)^3=1    n=2^k  注意这里是搜索（二分搜索）不是遍历。排序，查找 一般最坏情况都是NlogN
+
 
 
 # 题目 242   anagram 字母都一样，但顺序不同的两个词.  cat  tac  atc   判断两个词是否这种情况
@@ -45,20 +46,58 @@ print(test2('dabc','bacd'))
 #
 
 # 三数之和  
-# [-1 0 1 2 -1 -4 ]    a+b+c=0
-# 暴力循环 On^3
-# c=-a-b  
+# [-1 0 1 2 -1 -4 ]    a+b+c=sum
+# 法一:暴力循环 On^3
+# 法二：c=-a-b  遍历a和b，结果放在set，然后再set寻找是否有c  on^2
+# 
+# 法三：sort find   nlogn   遍历a，找出一个a之后，其他数进行排列，从小到大，b指向头,c指向尾，若a+b+c>sum  减小一点，所以c左移，若<sum，则b右移，增大
+# sorted(data, cmp=None, key=None, reverse=False)  
+# a=sorted([3,1,5,2,4])
+# print(a)
 
+# 15题
+#法二
+def threeSum(nums):
+	if len(nums)<3:
+		return []
+	nums.sort()
+	res=set()
+	for i,v in enumerate(nums[:-2]):#因为最后两位至少要放bc两个指针
+		if i>=1 and v==nums[i-1]: 
+			continue
+		d={}
+		for x in nums[i+1:]:
+			if x not in d:
+				d[-v-x]=1
+			else:
+				res.add((v,-v-x,x))#相当于append一个turple
+	return map(list,res),res
 
+a,b=threeSum([-1,1,0,4,5,6])
+print(b)
 
-
-
-
-
-
-
-
-
+# 法三
+def threeSum2(nums):
+	res=[]
+	nums.sort()
+	for i in range(len(nums)-2):
+		if i>0 and nums[i]==nums[i-1]:
+			continue
+		l,r=i+1,len(nums)-1
+		while l<r:
+			s=nums[i]+nums[l]+nums[r]
+			if s<0:l+=1
+			elif s>0:r-=1
+			else:
+				res.append([nums[i],nums[l],nums[r]])
+				while l<r and nums[l]==nums[l+1]:
+					l+=1
+				while l<r and nums[r]==nums[r-1]:
+					r-=1
+				l+=1;r-=1
+	return res
+b=threeSum2([-1,1,0,4,5,6])
+print(b)
 
 
 
