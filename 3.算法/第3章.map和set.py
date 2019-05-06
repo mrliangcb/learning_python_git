@@ -44,7 +44,10 @@ print(test2('dabc','bacd'))
 # 法二：set x+y=9转化为y=9-x   On找x,set为9-x(O1)    
 #
 
-
+# 三数之和  
+# [-1 0 1 2 -1 -4 ]    a+b+c=0
+# 暴力循环 On^3
+# c=-a-b  
 
 
 
