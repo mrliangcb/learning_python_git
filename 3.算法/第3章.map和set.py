@@ -37,7 +37,7 @@ def test2(s,t):
 	return dic1==dic2
 # on复杂度
 print(test2('dabc','bacd'))
-
+#分别统计字符出现的次数，然后看两个字典是否相同
 
 # two sum   three sum 用map解决 
 # [2,7,11,15]   和9   返回下标[0,1]
