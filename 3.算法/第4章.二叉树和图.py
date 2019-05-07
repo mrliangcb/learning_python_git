@@ -27,6 +27,7 @@ class Node:
 #中序遍历
 a=Node(3)
 b=Node(1)
+a.left=b
 c=Node(4)
 d=Node(4)
 
@@ -55,14 +56,14 @@ def helper(root):
 	prev=root
 	return helper(root.right)
 
-#递归
+#递归 98题
 def isValid(root,min,max):#下界上界
 	if root==None :return True#到了端点就会返回True，如果一开始就给none呢
-	if (min!=None and root.val<=min) :return False;
+	if (min!=None and root.val<=min) :return False
 	if (max !=None and root.val>=max) :return False
 	return isValid(root.left,min,root.val)and isValid(root.right,root.val,max);
 #检查左右子树
-isValid(a,2,3)
+print(isValid(a,0,4))
 #对于
 
 #235.236题
