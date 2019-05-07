@@ -47,14 +47,14 @@ def test2(root):
 	prev=None
 	return helper(root)
 def helper(root):
-	if root is None:
+	if root is None:#这个点不是底
 		return True
-	if not helper(root.left):
+	if not helper(root.left): #
 		return False
-	if prev and prev.val>=root.val:
+	if prev and prev.val>=root.val:#如果上一个非空和上一个内容，大于本节点的，就错了
 		return False
-	prev=root
-	return helper(root.right)
+	prev=root#prev指针指向本节点
+	return helper(root.right)#查右边
 
 #递归 98题
 def isValid(root,min,max):#下界上界
