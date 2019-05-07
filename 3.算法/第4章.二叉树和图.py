@@ -56,17 +56,53 @@ def helper(root):
 	return helper(root.right)
 
 #递归
-def isValid(root,min,max):
-	if root==None :return True
+def isValid(root,min,max):#下界上界
+	if root==None :return True#到了端点就会返回True，如果一开始就给none呢
 	if (min!=None and root.val<=min) :return False;
 	if (max !=None and root.val>=max) :return False
 	return isValid(root.left,min,root.val)and isValid(root.right,root.val,max);
-
+#检查左右子树
 isValid(a,2,3)
+#对于
 
-
-
-
-
-
+#235.236题
+#最近公共祖先
+#               6
+        # 2            8
+      # 0   4        7    9
+        # 3   5
+#
+#
+#递归 遍历树一次  
+#基于非搜索树
+def treeNode(root,p,q):
+	if(root==null or root==p or root==q): return root
+	left=treeNode(root.left,p,q)
+	right=treeNode(root.right,p,q)
+	if left==None:
+		return right
+	else:
+		if right == None:
+			return left
+		else:
+			return root
+			
+#最近公共祖先，二叉搜索树
+def lowCommon(root,p,q):
+	if p.val<root.val>q.val:
+		return self.lowCommon(root.left,p,q)
+	if p.val> root.val<q.val:#还没到
+		return self.lowCommon(root.right,p,q)
+	return root
+	
+#非递归写法(逻辑上，复杂度都跟上面递归一样的)
+def lowCommon2(root,p,q):
+	while root:#只要还没到端点
+		if p.val<root.val>q.val:
+			root=root.left
+		elif p.val>root.val<q.val:
+			root=root.right
+		else:
+			return root
+#
 
