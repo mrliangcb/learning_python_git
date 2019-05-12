@@ -33,7 +33,15 @@ a=[2,5,1]
 # print(a)
 
 
-3.
+#3.apply用法
+def test(m):
+	if m>2:
+		return True
+	else:
+		return False
+# a=[1,2,3,4]
+# a.apply(test)  #list 没有apply的属性
+#nn.module类，pandas中df和series都有apply的属性，传入可迭代的序列，送给test函数
 
 
 

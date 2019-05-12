@@ -33,8 +33,8 @@ def cal(option):
 	else:
 		print('出错')
 
-ret=cal(1)#获得了add的地址   前面两个参数x,y其实没什么用
-print(ret(2,2))  #相当于add(2,2)
+ret=cal(1)#传入了外层函数的参数
+print(ret(2,2))  #相当于add(2,2) 传入内层函数的参数  有点像类和对象的使用
 
 mul=cal(3)
 print(mul(2,3))

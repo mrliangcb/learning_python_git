@@ -1,6 +1,10 @@
 #第2章.堆栈队列
 
 #堆栈队列通常可以用数组list来实现,.pop(0)  .pop()底出和顶出   
+#push()
+
+
+
 #.append()入队或者入栈
 
 #判断()是否合法，左右匹配
@@ -18,11 +22,7 @@
 			# return Fales
 		# return not stack #如果遍历完了，检查一下是否空，空则返回true
 
-a={'a':'b'} #检查b在Key中有出现吗，不是value
-print('b' in a) #False
-b=[1,2,3]
-print(b.pop()) #pop(0)打出栈底
-print(b)
+
 
 
 #replace"()",""   从小到大匹配然后消除,时间复杂度不好计算

@@ -43,11 +43,24 @@ a=answer()
 print(a.maxSlidingWindow1([1,3,-1,-3,5,3,6],3))
 
 
-
-
-
-
-
-
+# 22生成匹配的括号
+# n=3 字符串就是2*n  比如说3对括号可以有5种合法组合
+# 递归，深度优先 局部不合法，就不再递归  左括号用了多少，右括号呢  
+# 
+list=[]
+def genParenthesis(n):
+	_gen(0,0,n,"") #初始化
+	return list
+def _gen(left,right,n,result):
+	if left==n and right ==n:  #配额花完
+		list.append(result)
+		return 
+	if left<n:#如果左边没用完，就先用左边的，左边记账+1
+		_gen(left+1,right,n,result+"(") #顶层先操作
+	if left>right and right<n:
+		_gen(left,right+1,n,result+")")#底层先操作
+a=genParenthesis(3)
+print(a)
+#递归可以分层思考
 
 

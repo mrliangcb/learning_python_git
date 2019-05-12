@@ -62,7 +62,9 @@ b=os.listdir(file_dir)
 	# s=eval(name)#找到这个变量并返回
 	# print(s)
 
-
+# 10.find用法
+a='conv2d'
+print(a.find('v2d')) #若找到，则返回第一个字符所在位置，若没找到返回-1
 
 
 
