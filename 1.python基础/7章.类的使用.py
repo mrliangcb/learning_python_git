@@ -144,8 +144,20 @@ E()
 
 
 
-
-
+# 如何调用类成员（作为全局变量）
+class people():
+	a=0 #静态的（共有的类成员，所以查看对象的成员属性可以看到有a,但不属于对象的，是类的）
+	__b=0 #私有(对象的成员属性查不到这个)
+	def __init__(self):
+		self.d=3
+		people.__b+=1 #类内可以调用 类私有或者共有
+		people.a+=1  
+test1=people()
+test2=people()
+test3=people()
+print(dir(test1))
+# print(people.__b) #类外不可调用私有
+print(people.a) #创建了多少对象
 
 
 

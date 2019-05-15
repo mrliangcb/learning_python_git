@@ -43,9 +43,19 @@ def test(m):
 # a.apply(test)  #list 没有apply的属性
 #nn.module类，pandas中df和series都有apply的属性，传入可迭代的序列，送给test函数
 
+#3.assert
+# assert print('assert用法')
 
+#4.isinstance   常用于判断 该对象 是否 某种类型
+class example():
+	pass
+a=example()
+print(isinstance([3,'good',2],int))
+print(isinstance([3],int))
+print(isinstance(3,int))
+print(isinstance(a,example))
 
-
+# 5.
 
 
 

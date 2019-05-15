@@ -116,6 +116,13 @@ print(np.array(b))
 a=np.array([[1,2,3],[1,2,3],[1,2,3]])
 print(a.ravel())#不改变原a，返回一个一维的np
 
+#复制扩展
+#一维： 
+a=np.array([0]) 
+a=a.repeat(5)   #从[0] 扩展成[0 0 0 0 0]
+# 二维:
+a.repeat([3,2],axis=1) 
+
 
 #np读取
 #np.load()
