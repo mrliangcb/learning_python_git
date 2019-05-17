@@ -1,6 +1,6 @@
 # learning_python
 
-### 1.[python基础用法](./python_basic/1.python基础)  
+### 1.[python基础用法](./1.python基础)  
 
 #### 第1章.字典，list,np的用法比较  
 #### 第2章.pandas用法  
