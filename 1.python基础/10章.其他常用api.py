@@ -70,9 +70,23 @@ print(b)
 # import pdb
 # pdb.set_trace()#设置断点语句
 
-# 7.
+# 7.计时器
+import time
+#显示时间
+time_1=time.strftime('%Y.%m.%d.%I.%M.%S',time.localtime(time.time()))
+print(a)
+print(a[0:4])
+print(a[5:7])
+print(a[8:10])
+#可以用> <符号来比较时间的前后
+#计时
+time_start=time.time()
+time_end=time.time()
+print('用时:',time_end-time_start)
 
-
-
-
+# 8.try用法
+try:
+	open(r'.\123.py')#执行函数
+except Exception  as e: #若上面找不到此文件，则进入下面exception
+	print('出错了')
 

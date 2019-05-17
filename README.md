@@ -18,36 +18,8 @@ np.dot,np.mul等计算
 #### 第8章.函数嵌套  
 #### 第9章.plt画图  
 #### 第10章.其他常用api  
-包含了很多常用的内建函数  
+包含了很多常用的内建函数的用法  
 
+### 2.[python进阶用法](./2.python进阶用法)
 
-#### [2.pandas](./pandas)
-  (1)用pandas打开csv文件
-  (2)统计表格数据
-  (3)concat，删，修改，查询
-  
-#### [3.path](./path&str)
-  
-#### [4.openCV](./openCV)
-  
-#### [5.class](./class)
-  类的使用
-  
-#### [6.plt_draw](./draw_plt)
-  
-#### [7.形参和实参](./实参形参.py)
-  
-
-  
-  
-  
-#### 一些内建函数   
-### 1.try except  
-```python
-try:
-	open(r'.\123.py')
-except Exception  as e: #若上面找不到此文件，则进入下面exception
-	print('出错了')
-```
-
-
+####
