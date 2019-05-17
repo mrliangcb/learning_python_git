@@ -4,8 +4,8 @@
 #参考 https://blog.csdn.net/Marksinoberg/article/details/69482397
 import numpy as np
 class BinaryTree:
-	def __init__(self,rootObj=None):#儿子的，一创建运行，=Binary(rootobj)  self只是声明这个是对象自己的，就像c++的非static   无self=static
-		self.key = rootObj#(参数给这里)  __私有变量，只能内部访问，外部只能通过公有方法访问,例如__a():为私有，a()为公有
+	def __init__(self,rootObj=None):#儿子的，只有创建对象时候才运行，=Binary(rootobj)  self只是声明这个是对象自己的，就像c++的非static   无self=static
+		self.key = rootObj#(参数给这里)  __对象变量，  对于私有属性__,外部只能通过公有方法访问,例如__a():为私有，a()为公有
 		self.leftChild = None #相当于声明一个私有属性，懂得用none,可以在普通def函数里面写self.私有变量，不一定这里
 		self.rightChild = None 
 		
@@ -74,15 +74,32 @@ class exa1():#顶层类，没有继承
 	def __init__(self):#初始方法
 		print('exa1_1')
 	def fc():
-		print('exa1_self_function')
+		print('第1个的fc')
+	def e2(self):
+		print('第一个类的e2')
 		
 		
 class exa2(exa1):#继承了exa1类
-	def __init__(self):#初始方法
-		print('exa2_1')
+	aa=3
+	def __init__(self):#初始方法    这里的init和fc都相当于重写，因为重名了，则按这里的为准，丢掉父类的
+		print('2类初始')
 	def fc():
-		print('exa2_self_function')#初始化时没有运行这个
+		print('第2个的fc')#初始化时没有运行这个
+	def e2(self):
+		super(exa2,self).e2()#调用了父类exa1的e2
+		
 	
+print('创建对象')
+a=exa2()
+
+print(a.fc)#a有fc，但不能运行，外部不能调用
+#a.fc()#  fc如果没有self，则为类方法，内,外部不能通过对象读，都要带着类.方法或者属性调用    
+#exa2.e2() 也是错的，因为e2是属于对象的，不属于类
+exa2.fc()
+a.e2()
+
+print('调用2类对象的类属性',a.aa)
+print(dir(a))
 	
 class exa3(exa1):#继承了exa1
 	def __init__(self):#初始方法
@@ -106,6 +123,7 @@ b=exa2()
 
 c=exa3()
 c.fc()
+
 
 print('返回len',len(c))
 print('返回getitm',c[2])

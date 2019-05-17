@@ -33,7 +33,7 @@ def b(start,end):
 		index+=1
 		print('最后')
 
-ret2=b(1,3)#设置一个迭代器 
+ret2=b(1,3)#设置一个迭代器 ，但是还没运行def b()函数，等next(ret2)才会从第一步运行，直到yield结束本次next
 for i in ret2:
 	print(i)
 

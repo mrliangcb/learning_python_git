@@ -259,6 +259,69 @@ def maxDepth(root):
 	
 #最小
 def minDepth(root):
-	if !root :return 0
-	if !root.left return 1+ 
+	if ~root :return 0
+	if ~root.left : return 1+0 
+
+
+#剪枝
+# BFS 从上到下从左到右
+# DFS先左子树，然后右子树
+# 很典型的是下棋例子
+ 
+# 51,51 N皇后问题
+
+# dfs方法一
+# 从第一行开始 ，到第N层结束 
+# 在一条线上 撇i+j恒定   捺i-j恒定 本列j  如果递归到下一层出现了i+j这个固定值，则皇后和皇后打架了
+
+def sollveQueens(n):#
+	def DFS(queens,xy_dif,xy_sum):#不建议用双层函数   二级形参
+		p=len(queens)
+		if p==n:#搜索完到最后一行了 n为一级形参
+			result.append(queens)
+			return None
+		for q in range(n):
+			if q not in queens and p-q not in xy_dif and p+q not in xy_sum:
+				DFD(queens+[q],xy_dif+[p-1],xy_sum+[p+1])
+	result=[]
+	DFS([],[],[])#一级形参
+	return [["."*i+"Q"+"."*(n-i-1) for i in sol ] for sol in result]  #i个点，n-i-1个点
 	
+
+a=[1,2,3]
+print(a+[4])#就是append
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

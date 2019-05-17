@@ -55,12 +55,22 @@ print(isinstance([3],int))
 print(isinstance(3,int))
 print(isinstance(a,example))
 
-# 5.
+# 5.reduce
+
+from functools import reduce
+a=[1,2,3,4,5]
+print(a[-2:])
+def haha(a,b):
+	return (a+b)
+b=reduce(haha,a) #a是一个可迭代的对象，是一个集和，有1到5，每次取两个出来计算，最终结果是一个数
+print(b)
 
 
+# 6.断点调试
+# import pdb
+# pdb.set_trace()#设置断点语句
 
-
-
+# 7.
 
 
 

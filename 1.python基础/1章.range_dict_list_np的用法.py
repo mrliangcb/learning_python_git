@@ -153,6 +153,10 @@ np.random.shuffle(sample)
 #.float()
 #list: 
 
+#x=np.zeros((,),dtype=np.float32)
+#如果给这个矩阵赋float64的数据，最终x.dtype还是float32
+
+
 #np和for 
 #a=[[1,2,3],[4,5,6],[7,8,9]]
 #f=[i for i in a]  #遍历处理的东西，放回list中，for和list.append融合的高效写法
