@@ -14,6 +14,7 @@ if readmode==1:
 	print(dset)
 	print(dset.shape)
 	print(dset.dtype)
+	print(np.array(dset))
 	f.close()
 	# print(dset.value)
 	

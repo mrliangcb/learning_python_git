@@ -22,10 +22,19 @@ print(idx_label.keys())
 # (2)分离key,value
 key=[]
 value=[]
-for i in dict.keys():#遍历坐标
+for i in dict.keys():#遍历坐标   不写.keys也行的
 	key.append(i)
 	value.append(dict[i])
 
+#利用key做统计
+#先遍历 一个可迭代的东西 称为item
+# dic1[item]=dic1.get(item,0)+1 # 看看是否有item这个key，有的话拿出来，+1，送给原item这个key。如果没有，则0+1送给item新key
+# list(dict.keys()) 把turble变成list
+
+# 字典的遍历
+# (1) for key in dict:  for key in a.keys():    遍历key
+# (2) for value in a.values(): 遍历值
+# (3)for kv in a.items():   key和值一起遍历
 
 
 #3.list

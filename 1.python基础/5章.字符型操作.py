@@ -64,9 +64,16 @@ b=os.listdir(file_dir)
 
 # 10.find用法
 a='conv2d'
-print(a.find('v2d')) #若找到，则返回第一个字符所在位置，若没找到返回-1
+print(a.find('v2d')!=-1) #若找到，则返回第一个字符所在位置，若没找到返回-1
 
+# 11.路径提取
+path=r'a/b/c/d/e/h.h5'
+father_doc=os.path.dirname(path) #上一级目录
+print(father_doc)
+father_base=os.path.basename(father_doc) #上一级目录的末端
+print(father_base)
 
+# 12.split
+string.split('\')
 
-
-
+# 13.
