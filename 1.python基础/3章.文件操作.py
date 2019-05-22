@@ -28,3 +28,9 @@ with open(r'.\trainLabels.csv', 'r') as f: #f指向这个地址
 # shutil.copy("源文件地址","目的路径+文件名") #old可以是文件全名/home/123.txt  new可以是一个目录/home/lcb/data
 #源和目标都可以是文件夹或者文件
 #
+
+#   
+if not os.path.isdir(file_dir):
+	os.makedirs(file_dir)
+
+

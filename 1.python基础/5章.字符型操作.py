@@ -76,4 +76,8 @@ print(father_base)
 # 12.split
 string.split('\')
 
-# 13.
+# 13. .rstrip('\n')
+# 删除末尾字符
+
+
+
