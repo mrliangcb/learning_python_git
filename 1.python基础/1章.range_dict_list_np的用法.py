@@ -196,7 +196,7 @@ random.sample(indexList, 5)#打乱，然后抽样5个，不重复
 # 1 two
 # 2 three
 
-
+# 计算相关  可以输入list或者np矩阵
 #np乘法
 np.dot()  横乘以竖
 np.multiply()  对应相乘
@@ -205,6 +205,9 @@ np.multiply()  对应相乘
 array.T
 常用np.dot(a,b.T)，序列求乘积的和
 
+# np.sqrt() 根号  
+# np.square = array**2 求平方
+# 
 
 #两个列表打包一起乱序
 import random

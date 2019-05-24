@@ -25,8 +25,8 @@ plt.rcParams['font.sans-serif']=['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 
-
-ax1=plt.subplot(1,2,1)#ax1指针指向当前这个窗口显示4个子图，最后一个参数表示第一个子图
+# 在fig图上画第一个子图
+ax1=plt.subplot(1,2,1)#ax1指针指向当前这个窗口显示4个子图，最后一个参数1表示第一个子图
 ax1.plot(x,y,'r-',label="x^2",linewidth=1,markerfacecolor='blue',markersize='5')
 ax1.set_title('第一子图')#第一个子图的名字
 plt.text(1,1,(1,1),ha='center', va='bottom', fontsize=10)
@@ -34,12 +34,20 @@ plt.title('R channel')
 plt.xlabel(u"Time(s)")#显示横轴名字
 plt.ylabel(u"Volt")
 
-plt.ylim(-2,2)
-plt.xlim(-3,15)
+# plt.ylim(-2,2)#显示特定轴的最大最小值
+# plt.xlim(-3,15)
 #plt.text(5,1,'three') 在5,1上显示这个文字
-plt.yticks([-2,-1.8,-1,1.22],[r'same',r'mike',r'blue',r'hhaa'])#在特定坐标轴位置标记
-plt.legend()#图例生效
+# plt.yticks([-2,-1.8,-1,1.22],[r'same',r'mike',r'blue',r'hhaa'])#在特定坐标轴位置标记
+plt.legend(loc='best')#图例生效，显示在最好的位置 
 
+#annotate 标注用法
+y0=0
+x0=0
+plt.annotate(r'y^2=x',xy=(0,0),xycoords='data',xytext=(+3,60),textcoords='offset points',
+	fontsize=16,arrowprops=dict(arrowstyle='->',connectionstyle='arc,rad=2'))
+#data是基于数据值选位置，
+#xytext 注释文字坐标位置
+# xy为注释的坐标点  s为注释文本内容
 
 #操作第二个子图
 ax2=plt.subplot(1,2,2)
@@ -114,7 +122,8 @@ plt.show() #
 
 #scatter
 #plt.scatter(x.data.numpy()[:, 0], x.data.numpy()[:, 1], c=pred_y, s=4, lw=0.1, cmap='RdYlGn')
-
+# c为颜色  alpha=0.5为透明度
+# cmap 
 
 
 #https://blog.csdn.net/u013468614/article/details/58689735 动态显示！
