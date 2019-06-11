@@ -89,6 +89,7 @@ try:
 	open(r'.\123.py')#执行函数
 except Exception  as e: #若上面找不到此文件，则进入下面exception
 	print('出错了')
+# time.sleep(3)#睡眠
 
 # 9.打乱，采样
 import random

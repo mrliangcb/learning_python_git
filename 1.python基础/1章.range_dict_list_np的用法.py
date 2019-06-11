@@ -30,6 +30,9 @@ for i in dict.keys():#遍历坐标   不写.keys也行的
 #先遍历 一个可迭代的东西 称为item
 # dic1[item]=dic1.get(item,0)+1 # 看看是否有item这个key，有的话拿出来，+1，送给原item这个key。如果没有，则0+1送给item新key
 # list(dict.keys()) 把turble变成list
+# dict.setdefault('runoob', None)  #看看有没有runoob，有就拿出来value，没有的话给该key赋值，并且显示出来
+
+
 
 # 字典的遍历
 # (1) for key in dict:  for key in a.keys():    遍历key
@@ -55,7 +58,7 @@ for i in dict.keys():#遍历坐标   不写.keys也行的
 
 #(7)排序
 #lista.sort(reverse = True) #reverse = True 降序， reverse = False 升序（默认）。
-
+# a[::-1] #相当于把list的顺序翻转
 #(8)删除
 a=np.array([1,2,3]).tolist()
 a.remove(1)#删除一个元素1
@@ -103,9 +106,12 @@ print(e)
 #b=np.expand_dims(a,axis=0)#增加维度
 #c=np.squeeze(b)#删除维度为1的
 
+# np.random.seed() #他不是单独使用的，与随机数生成的语句配合   1.如果数值相同的种子，生成的随机数是一样的  2,.对之后的程序生成随机数一直有作用
+# np.random.randn(1, 5)
+# 赋值问题 x=y,x[0,1]=3,于是y中的[0,1]也会被修改为3，因为x是取得y的首地址，于是x[0,1]是取得这个地址上的值
+# x=y.copy() 这样x修改就不会影响到y
 
-
-
+# (2)类型转换
 #转化   np转list 一维才可以转
 a=np.array([1,2,3])
 b=a.tolist()
@@ -114,7 +120,7 @@ print(b)
 # listh转array
 print(np.array(b))
 
-
+# (3)维度，变换
 # #矩阵拼接
 # #水平
 # print np.hstack((a, b))
@@ -200,6 +206,8 @@ random.sample(indexList, 5)#打乱，然后抽样5个，不重复
 #np乘法
 np.dot()  横乘以竖
 np.multiply()  对应相乘
+np.mean()  #axis=0第0维度，如果是二维的话，就是行之间的平均   =1
+或者array.mean()
 
 #矩阵转置
 array.T
@@ -215,7 +223,11 @@ c = list(zip(a, b))
 random.shuffle(c)
 a[:], b[:] = zip(*c)
 
-
+#统计np
+np.bincount(x)  #各种数字出现多少次  序列样本，转化为次数
+np.argsort(x)  #次数转化为排序
+np.max() #求最大值
+np.argmax()  #求最大值对应的索引
 
 
 

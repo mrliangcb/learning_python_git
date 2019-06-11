@@ -18,7 +18,7 @@
 #  更加高效是，2/n又分一半   可以看n可以分多少次一半2^x=n x=logx(n) 这么多次操作   比上面更少复杂度
 
 def myPow(x,n):
-	if not n:
+	if not n:#n为0
 		return 1
 	if n<0:
 		return 1/myPow(x,-n)

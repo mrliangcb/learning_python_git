@@ -30,7 +30,8 @@ with open(r'.\trainLabels.csv', 'r') as f: #f指向这个地址
 #
 
 #   
-if not os.path.isdir(file_dir):
+os.path.exists('test_file.txt')#查看文件是否存在
+if not os.path.isdir(file_dir): #查看文件夹是否存在
 	os.makedirs(file_dir)
 
 

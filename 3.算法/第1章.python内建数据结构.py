@@ -47,6 +47,12 @@ queue=collections.deque()
 queue.append(a)
 print(len(a))
 
+#基础算法复杂度
+sorted(list)
+2^x=len
+x=log2(n)
+
+
 
 
 
