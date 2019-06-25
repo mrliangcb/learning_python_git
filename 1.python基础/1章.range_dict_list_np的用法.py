@@ -47,9 +47,15 @@ for i in dict.keys():#遍历坐标   不写.keys也行的
 
 #(3)建立长list:  d=np.arange(1,4,1).tolist()
 #				d=list(range(0,10,1))
+
+#建立有长度的空list  a=[[] for i in range(10)]
+
 #(4)str转为list:  a=list('abc')
 
 #(5)把str按照逗号为分隔符，分开后装到list  [i.split(',')[0] for i in lines]
+
+
+
 
 #(6)增添元素
 #.append()   .extend()
@@ -130,6 +136,10 @@ print(np.array(b))
 # print np.concatenate((a, b), axis=0)
 a=np.array([[1,2,3],[1,2,3],[1,2,3]])
 print(a.ravel())#不改变原a，返回一个一维的np
+np.stack([[a],[b],[c]]) #将多个行竖直concat    0方向
+#hstack就是1方向，水平方向
+
+
 
 #复制扩展
 #一维： 
@@ -208,6 +218,10 @@ np.dot()  横乘以竖
 np.multiply()  对应相乘
 np.mean()  #axis=0第0维度，如果是二维的话，就是行之间的平均   =1
 或者array.mean()
+np.exp()  #e的次方
+a@b #滑动做乘法，单次对应相乘然后求和     跟.dot很像
+#如 [[1,2,3],[4,5,6]]@[a,b,c]=[1*a+2*b+3*c,[……]]
+np.log()
 
 #矩阵转置
 array.T
