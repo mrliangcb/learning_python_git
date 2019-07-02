@@ -13,6 +13,31 @@ import new.my_model2 as model
 #
 
 #问题：引用的自定义module里面没有我写了的def 怎么办?
-#可能原因： 1.读的module可能不是我自定义的这个，重名了   2.module名字有下划线(有时可以有时不可以) 
+#可能原因： 1.读的module可能不是我自定义的这个，重名了   2.module名字有下划线(有时可以有时不可以)  
 # https://zhuanlan.zhihu.com/p/36173202
 # 看module或者类里面有什么  dir(类或者module)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
