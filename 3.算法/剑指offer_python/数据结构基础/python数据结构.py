@@ -6,7 +6,10 @@
 # https://blog.csdn.net/qq_28304687/article/details/79088491 
 #https://blog.csdn.net/liangguohuan/article/details/7088265
 
-
+class Node():
+	def __init__(self,x):
+		self.val=x # 成员都写在函数里
+		self.next=None
 
 # (1)list
 # list是线性表，按照位置索引o1,插入删除，按值搜索都是On  排序nlogn    
@@ -40,12 +43,16 @@ print('b' in a) #False
 import collections
 queue=collections.deque()
 queue.append(a)
+
 print(len(a))
+print('deque放入了什么:',queue)
+
+
 
 #基础算法复杂度
-sorted(list)
-2^x=len
-x=log2(n)
+# sorted(list)
+# 2^x=len
+# x=log2(n)
 
 # (5)树节点
 class Node:
@@ -55,7 +62,12 @@ class Node:
 
 
 
-
+# (6)链表
+#链表的一个元素为node节点，内容有value和指针 。树有左右孩子，链表只有一个孩子  
+class Node():
+	def __init__(self,x):
+		self.val=x # 成员都写在函数里
+		self.next=None 
 
 
 
