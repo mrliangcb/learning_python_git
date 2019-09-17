@@ -7,12 +7,12 @@ print(type(a))
 
 b=b'0100' 
 print(b) #显示完全二进制
-print(type(b))
+print('b的类型',type(b)) #bytes类型 
 
 #二进制转10进制
 print('0100的十进制',int(b,2)) #要记得表明这个原来是几进制
 
-print(bin(4))
+print(bin(4))# bin 就是把Int转化为 str
 print(bin(1))
 print(bin(4 ^ 1)) #做异或，不同为1
 print('二进制数字运算，输出是整形',0b0100 + 0b1011)#为15整形
@@ -21,3 +21,38 @@ print(type(b'0100'))#bytes型，但不能计算，用作计算的时候把这个
 
 # and or 是判断是否为0，十进制
 # &  |  基于bit的判断
+
+
+x = b'10101010'#bytes 离散的 int可以把他们组合起来
+print('把bytes解析成int',int(x,2))#按照二进制解析
+x2=int(x,2)
+print('bytes转化为int:',x2,"也可以bin(int)",bin(x2))
+
+y2=0b0111 #这种最直接是int  b''要用int(,2)转为int   
+y=0b0101
+print('求异或和与',y2^y,y2&y)#^是异或， &是与
+#x是bytes型，y是int型
+# int型可以右移，可以bin(),可以求与^
+print('抗一下两个长度x,x2:',len(x))#,len(x2)  #第一个代表8个bytes，第二个是int没有len，所以报错
+
+
+
+#平时int('123')是默认10进制
+
+# a>>2 右移符号，不是循环
+
+# bytearray(bytes)用法
+# 
+
+
+
+
+
+
+
+
+
+
+
+
+

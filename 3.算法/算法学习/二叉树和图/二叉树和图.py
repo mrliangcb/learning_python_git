@@ -207,10 +207,10 @@ def dfs(node,visited):
 			dfs(next_node,visited)   #传递栈
 
 
-# 102题 二叉树遍历  按层
+# 102题 二叉树遍历  按层        
 #（1）bfs   把每层元素加入到队列
-#           batch处理 最佳
-# (2)  dfs   每次循环记得深度
+#           batch处理 最佳      
+# (2)  dfs   每次循环记得深度   
 
 a=Node(1)
 b=Node(2)
@@ -293,6 +293,9 @@ print(a+[4])#就是append
 
 
 
+# 二叉搜索树 和 平衡树
+
+# 一般情况下插入 logn   最差情况(极度不平衡)就是n
 
 
 

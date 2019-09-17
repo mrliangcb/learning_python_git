@@ -1,3 +1,5 @@
+# Leetcode-54和57
+
 #顺时针打印矩阵
 import numpy as np
 image = b=np.arange(0,16,1).reshape((4,4))
@@ -35,3 +37,29 @@ for i in range(0,circle,1):
 		
 	
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

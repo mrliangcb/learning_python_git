@@ -39,7 +39,7 @@ print('用\s匹配',re.search(ptn,string))
 #句尾句首
 
 #寻找所有匹配
-print('找到所有',re.findall(r'r[au]n','run run ran  r5n'))#等价于(ran|run)
+print('找到所有',re.findall(r'r[au]n','run rn run ran  r5n'))#等价于(ran|run)
 
 #compile
 compiled_re=re.compile(r'r[au]n')
@@ -61,7 +61,7 @@ text1='hello egon 123'
 print(re.findall('\d',text1))#找出单个数字   \D就是找出单个字母
 
 #\A字符串的开始,   \Z字符串的结束(换行前)
-print(re.findall('\Ahe','hello egon 123')) #比如这里要找开头是he的，而且返回这个开头
+print('字符串的开始',re.findall('\Ahe','hello egon 123')) #比如这里要找开头是he的，而且返回这个开头
 print(re.findall('\A(he..)','hello egon 123')) #.指的是任意字符0次或1次  *表示前一个符号出现0次或多次
 
 print(re.findall('bd(ec?)','[abdecbdec]'))#先找bde，再找bdec，有哪个就返回哪个，如果满了bdec就作为一个结果，再去找下一个   ?表示前面一个是0或1次

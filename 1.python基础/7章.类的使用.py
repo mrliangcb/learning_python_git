@@ -4,10 +4,12 @@
 #参考 https://blog.csdn.net/Marksinoberg/article/details/69482397
 import numpy as np
 class BinaryTree:
+	_test=1000
 	def __init__(self,rootObj=None):#儿子的，只有创建对象时候才运行，=Binary(rootobj)  self只是声明这个是对象自己的，就像c++的非static   无self=static
-		self.key = rootObj#(参数给这里)  __对象变量，  对于私有属性__,外部只能通过公有方法访问,例如__a():为私有，a()为公有
+		self.key = rootObj#(参数给这里)  __对象变量，  对于私有属性__a,外部只能通过公有方法访问,例如__a():为私有，a()为公有
 		self.leftChild = None #相当于声明一个私有属性，懂得用none,可以在普通def函数里面写self.私有变量，不一定这里
 		self.rightChild = None 
+		# test=1000 #类属性不能写在这里，要写在def外面
 		
 	#上面是儿子的数字，下面是儿子的工具箱
 	def insertLeft(self,newNode):  #也是儿子的 儿子名.insertLeft调用
@@ -45,6 +47,7 @@ class BinaryTree:
 #def __init__(self,rootObj=None) 其实r对应于self，'boy1'对应于rootObj
 r=BinaryTree('boy1')
 y=BinaryTree('boy3')
+print('y的类属性:',y._test)  #类属性 只能类.属性 调用
 print(r.getRootVal())#其实直接r.key也是可以的
 r.insertLeft('boy2')
 print(r.getLeftChild().getRootVal())#递归取实例方法
@@ -188,6 +191,10 @@ print('从对象访问类成员:',test3.a)#对象对一个类，所以可以从�
 
 
 
+# 1、全局变量
+# 2、局部变量：在函数内、在class的方法内（未加self修饰的)
+# 3、静态变量（也可以说，类属性）：在class内的，但不在class的方法内的
+# 4、实例变量（也可以说，实例属性）：在class的方法内的，用self修饰的变量
 
 
 

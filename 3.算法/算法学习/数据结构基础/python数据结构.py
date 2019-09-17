@@ -22,7 +22,7 @@ list_a=[]
 list_a.append(a)#queue也能存放节点
 print(list_a)
 list_a.pop(0)
-print(list_a) 
+print('pop(0)之后',list_a) 
 
 
 # (2)dict
@@ -43,7 +43,7 @@ print('b' in a) #False
 import collections
 queue=collections.deque()
 queue.append(a)
-
+queue.appendleft(9999)
 print(len(a))
 print('deque放入了什么:',queue)
 

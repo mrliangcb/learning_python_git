@@ -21,3 +21,7 @@ preorder_seq = [1, 2, 4, 7, 3, 5, 6, 8] #前序遍历
 middleorder_seq = [4, 7, 2, 1, 5, 3, 8, 6]#中序遍历     
 solution = Solution()
 treeRoot1 = solution.getBSTwithPreTin(preorder_seq, middleorder_seq)
+
+
+
+

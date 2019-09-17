@@ -26,8 +26,13 @@ class BinaryTree:
             t = BinaryTree(newNode)
             t.right = self.right
             self.right = t
-abs
-def mirri(root):
+
+
+
+
+#求镜像
+def mirri(root):  
+
 	if (root is None):
 	#if(root==None):
 		return 0
@@ -35,10 +40,10 @@ def mirri(root):
 	# if root:
 	if root!=None:
 		print('非空')
-		root.left,root.right=root.right,root.left
-		if root.left:
+		root.left,root.right=root.right,root.left   #左右互换
+		if root.left:  #左非空 ，下放递归
 			mirri(root.left) #python递归算法
-		if root.right:
+		if root.right: #右非空，下放右
 			mirri(root.right)
 	return root
 	

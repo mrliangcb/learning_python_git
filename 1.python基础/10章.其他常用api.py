@@ -94,3 +94,12 @@ except Exception  as e: #若上面找不到此文件，则进入下面exception
 # 9.打乱，采样
 import random
 # random.shuffle()
+
+
+
+
+
+
+
+
+

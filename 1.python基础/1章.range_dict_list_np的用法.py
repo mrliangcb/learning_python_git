@@ -48,7 +48,8 @@ for i in dict.keys():#遍历坐标   不写.keys也行的
 #(3)建立长list:  d=np.arange(1,4,1).tolist()
 #				d=list(range(0,10,1))
 
-#建立有长度的空list  a=[[] for i in range(10)]
+#建立有长度的空list  a=[[] for i in range(10)]  拉多空格
+#建立非空长度的list   a=[0]*6                   拉长空格里面的东西 
 
 #(4)str转为list:  a=list('abc')
 
@@ -118,8 +119,8 @@ print(e)
 # x=y.copy() 这样x修改就不会影响到y
 
 # np与mat的区别
-# mat:   a=[[0]*3]*4 为四行三列   索引   a[i][j]
-# np:    b=np.zeros((4,3))        索引   b[i,j]
+# mat:   a=[[0]*3]*4 为四行三列   索引   a[i][j]   元素间有逗号,
+# np:    b=np.zeros((4,3))        索引   b[i,j]     没有逗号
 
 
 
@@ -172,7 +173,7 @@ a.repeat([3,2],axis=1)
 # result=[]
 # for i in range(len(a[0])):
 	# result.append(a[0][i])
-
+#查看np矩阵大小  np矩阵.shape
 
 #保存
 #np.savetxt('answer.txt',矩阵,fmt='%d')#保存的数据是整形的
