@@ -49,10 +49,13 @@ for i in test:
 # print(isinstance(b,Iterable))
 
 
+class test():
+	def __call__(self,num):
+		print(num)
 
-
-
-
+a=test()('beautiful')# 调用call
+b=test()
+b('beautiful')
 
 
 

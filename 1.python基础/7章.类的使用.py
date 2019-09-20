@@ -4,11 +4,11 @@
 #参考 https://blog.csdn.net/Marksinoberg/article/details/69482397
 import numpy as np
 class BinaryTree:
-	_test=1000
+	_test=1000 
 	def __init__(self,rootObj=None):#儿子的，只有创建对象时候才运行，=Binary(rootobj)  self只是声明这个是对象自己的，就像c++的非static   无self=static
 		self.key = rootObj#(参数给这里)  __对象变量，  对于私有属性__a,外部只能通过公有方法访问,例如__a():为私有，a()为公有
 		self.leftChild = None #相当于声明一个私有属性，懂得用none,可以在普通def函数里面写self.私有变量，不一定这里
-		self.rightChild = None 
+		self.rightChild = None # python里面没有私有属性这种说法，任何变量都能被调用 
 		# test=1000 #类属性不能写在这里，要写在def外面
 		
 	#上面是儿子的数字，下面是儿子的工具箱
@@ -47,7 +47,7 @@ class BinaryTree:
 #def __init__(self,rootObj=None) 其实r对应于self，'boy1'对应于rootObj
 r=BinaryTree('boy1')
 y=BinaryTree('boy3')
-print('y的类属性:',y._test)  #类属性 只能类.属性 调用
+print('y的类属性:',y._test)  #类属性   可以类.类属性 或者 对象.类属性调用   对象优先查找 self变量，没有就到类找
 print(r.getRootVal())#其实直接r.key也是可以的
 r.insertLeft('boy2')
 print(r.getLeftChild().getRootVal())#递归取实例方法
@@ -168,26 +168,36 @@ E()
 # 如何调用类成员（作为全局变量）
 class people():
 	a=0 #静态的（共有的类成员，所以查看对象的成员属性可以看到有a,但不属于对象的，是类的）
-	__b=0 #私有(对象的成员属性查不到这个)
+	__b=0 #dir 对象 中找不到  
+	
 	
 	def __init__(self):
-	
+		
 		self.d=3
-		people.__b+=1 #类内可以调用 类私有或者共有
+		people.__b+=1 #类内可以调用 类私有或者共有  类外不能调用people.__b了，对象.__b更加不行  
 		people.a+=1  
 test1=people()
 test2=people()
 test3=people()
-print(dir(test1))
+
+print('dir(people):',dir(people))
+print('dir(test1):',dir(test1)) #没有__b  双下划线b 封装成   _类__b  这个东西就等价成 类成员a了  完全一样   
+print(people._people__b)
+print(test1._people__b)
+print('名字:',test1.__class__.__name__) #类名字
+
+
 # print(people.__b) #类外不可调用私有
 print(people.a) #创建了多少对象
 print('从对象访问类成员:',test3.a)#对象对一个类，所以可以从对象访问类共有成员
 #一个类对应多个对象，所以不能从类找self对象成员
 
 #但不能 对象.类方法  外部访问  应该类.类方法访问  因为对象. 访问的时候，会自动传入self，但类方法是不接受self的
-
-
-
+# for obj in test1.__getattribute__:
+	# # if isinstance(obj, Dog): #isinstance(A,B)    指的是type(A)是否=B  或者A的类在B里面吗
+	# print ('子类名字',obj.name)
+print(people)
+print('是他的对象吗',isinstance(test1,people))
 
 
 
