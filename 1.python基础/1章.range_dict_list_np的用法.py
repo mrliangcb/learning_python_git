@@ -99,6 +99,13 @@ np.array([[1,2,3],
 np.zeros(shape=(3,4))
 # np.ones
 
+# 生成单位矩阵
+
+np.diag([1] * 4)  #注意np没有地址连带作用，只会单独位置赋值
+np.identity(4)
+
+
+
 
 #产生随机数(不重复，且整数)
 b=np.arange(100,dtype=np.int)
@@ -124,8 +131,11 @@ print(e)
 
 
 
-
-
+#(2) 修改
+# 只要形状对了，np可以整体赋值
+# a=np.zeros((3,3))
+# print(a)
+# a[0:2,:]=np.ones((2,3)) #对局部进行整体赋值
 
 
 
@@ -157,6 +167,7 @@ np.stack([[a],[b],[c]]) #将多个行竖直concat    0方向
 #复制扩展
 #一维： 
 a=np.array([0]) 
+
 a=a.repeat(5)   #从[0] 扩展成[0 0 0 0 0]
 # 二维:
 a.repeat([3,2],axis=1) 

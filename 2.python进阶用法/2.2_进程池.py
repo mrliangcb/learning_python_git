@@ -21,8 +21,11 @@ if __name__=='__main__':
 	st1=time.time()
 	print('运行时间:',st1-st)
 	
-	
-	
+	st=time.time() 
+	for i in range(1000000):
+		job(i)
+	st1=time.time()
+	print('运行时间2:',st1-st)
 	
 	
 	
