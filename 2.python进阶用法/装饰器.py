@@ -47,23 +47,26 @@ print(mul(2,3))
 
 user=True
 
-def login_require(func):
-	def wrapper():
+def login_require(func):# 这个负责传入函数地址，不是帽子
+	print('进来帽子')
+	def wrapper(*args,**kwargs):#这个是帽子
 		if user==False:
-			func()
+			print('False','装饰器里')
+			func(*args,**kwargs)
 		else:
-			print('使用者为true')
-
+			print('True','装饰器里')
+			func(*args,**kwargs)
+	return wrapper
 #写装饰器
 @login_require
-def edit_user(username):
-	print('进入第一个函数')
+def edit_user(username):#把函数地址传入
+	print('进入第一个函数',username)
 
 # @login_requiere
 
-login_require(edit_user)#等价wrapper函数
-login_require(edit_user)('iliao')
-
+# login_require(edit_user)#等价wrapper函数
+# login_require(edit_user)('iliao')
+edit_user('lcb')
 
 
 
