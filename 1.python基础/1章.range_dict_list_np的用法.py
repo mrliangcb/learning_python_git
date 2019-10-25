@@ -91,6 +91,7 @@ np.arange(1,4,1,dtype=np.int32)
 
 np.linspace(0, 10, 1000)#0到10之间平均分成1000分
 
+
 np.array([[1,2,3],
 			[4,5,6],
 			[7,8,9]],dtype=np.int)
@@ -173,7 +174,10 @@ a=a.repeat(5)   #从[0] 扩展成[0 0 0 0 0]
 a.repeat([3,2],axis=1) 
 
 
-#np读取
+#非np读
+# input().strip()#显示器上输入一行
+
+#np读取  以矩阵的形式读或者以行str的形式读
 #np.load()
 #np.loadtxt(path,delimiter=',',dtype=str)逗号作为分隔，要不然逗号也含在[]里，如果文件本身的类型是str
 # print('第一行:\n',a[0])
@@ -260,6 +264,9 @@ import random
 c = list(zip(a, b))
 random.shuffle(c)
 a[:], b[:] = zip(*c)
+
+#   np.random.shuffle()   # np的shuffle
+
 
 #统计np
 np.bincount(x)  #各种数字出现多少次  序列样本，转化为次数

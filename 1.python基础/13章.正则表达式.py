@@ -102,7 +102,7 @@ print(re.findall('[0-9a-zA-Z]',st))#只匹配一个数字或者字母
 print('--------------------------')
 print(st)
 print(re.findall(r'[0-9A-Za-z]+(?:-[0-9A-Za-z]+)*',st))
-print(re.findall(r'[0-9A-Za-z]+(?:-[0-9A-Za-z]+)*',st))
+print(re.findall(r'[0-9A-Za-z]+(?:-[0-9A-Za-z]+)*',st))#(:?) 表示()只是表示一个整体，不是只返回里面的
 
 
 
