@@ -53,7 +53,8 @@ print('抗一下两个长度x,x2:',len(x))#,len(x2)  #第一个代表8个bytes�
 
 a=int(b'11111000',2)
 print(a)
-print(a>0x7f) #False，
+print('检测最高位算子',bin(0x7f))
+print('最高位溢出没有',a>0x7f) #False，
 t=0xff
 #检测到是负数 两种处理办法
 # (1)
@@ -66,9 +67,39 @@ print(-(0b100000000-a))#8位系统，那用第九位1 减去自己=反码+1
 
 
 
+class Solution(): 
+	def Add(self, a, b):           
+		t=0xFFFFFFFF
+		while(b): 
+			a,b = (a^b)&t ,((a&b)<<1) & t
+		return a if a<=0x7FFFFFFF else ~(a^t)
+exam=Solution()
+print('加法结果',exam.Add(16,-8))
 
+t1=0xff
+t2=0x7f
+a=b'00010000'
+b=b'10001000'
+a=int(a,2)
+b=int(b,2)
+a=a&t1
+b=b&t1
+print(bin(a),bin(b))
+print(a>t2,b>t2)
+b=(b^t2)+1
+print(bin(b))
+r=a+b
+r=r&t1
+print(r)
 
+print(bin(-3))
+print(16^(-8))
+print('-24取反',bin(-24&0xff))
+print('补的与',bin((-24&0xff)&0xff))
 
+print('8的与',bin(0b1000&0xff))
+print(bin(-0b1101&0xff))
+print(bin(~(0b1101)))
 
 
 

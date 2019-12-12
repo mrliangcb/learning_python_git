@@ -49,14 +49,14 @@ user=True
 
 def login_require(func):# 这个负责传入函数地址，不是帽子
 	print('进来帽子')
-	def wrapper(*args,**kwargs):#这个是帽子
+	def wrapperr(*args,**kwargs):#这个是帽子
 		if user==False:
 			print('False','装饰器里')
 			func(*args,**kwargs)
 		else:
 			print('True','装饰器里')
 			func(*args,**kwargs)
-	return wrapper
+	return wrapperr
 #写装饰器
 @login_require
 def edit_user(username):#把函数地址传入

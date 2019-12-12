@@ -90,6 +90,9 @@ print(re.findall('\[(.*?)\]','[abdecbdec],[abdecbdeccde]')) #.*代表的是[]里
 # () 小括号
 # 3{3} 前面一位匹配3次 333
 # 3+ 匹配1个或者多个
+# \w+   "\w"匹配单词字符，即a-z，A-Z，0-9、_  出现1次或者多次
+
+#爬虫的时候，源头图片可能都放在同一个文件夹,比如hppt://a/b/public/hello.jpg   那我就要找public里面的东西(jpg)，  http://a/b/public/\w.jpg
 
 st='123456'
 print(re.findall('2([1,2,3])4',st)) #找到234之后，返回()里面的就是3
